@@ -90,6 +90,38 @@
     color: var(--muted);
   }
   a { color: #4a6fa5; }
+
+  /* ---------- language switch ---------- */
+  .lang{
+    display:flex;
+    gap:10px;
+    justify-content:flex-start;
+    margin:0 0 32px;
+  }
+  .lang a{
+    display:inline-block;
+    padding:8px 22px;
+    border-radius:999px;
+    border:1px solid #0B1120;
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:.02em;
+    text-decoration:none;
+    color:#0B1120;
+    transition:background .15s ease,color .15s ease;
+  }
+  .lang a[aria-current="true"]{
+    background:#0B1120;
+    color:#fff;
+  }
+  .lang a:not([aria-current="true"]):hover{
+    background:#F1F2F5;
+  }
+  .lang a:focus-visible{
+    outline:2px solid #96742A;
+    outline-offset:3px;
+  }
+  @media print{ .lang{display:none} }
 </style>
 </head>
 <body>
@@ -100,6 +132,12 @@
 </header>
 
 <main>
+
+  <nav class="lang" aria-label="Language">
+    <a href="./" aria-current="true">日本語</a>
+    <a href="en/">English</a>
+  </nav>
+
   <div class="meta">制定日：2026年7月3日　　最終改定：2026年7月26日　　版数：v1.1</div>
 
   <div class="note">
